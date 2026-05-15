@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlowState Photography | Ernest Szymański</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root { --khaki: #8B8566; }
+        
+        body { 
+            background-color: #000; 
+            color: #fff; 
+            margin: 0; 
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* TŁO ZABLOKOWANE - TWOJA WIZYTÓWKA */
+        .fixed-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('hero.jpg');
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+        }
+
+        /* EFEKT CIENIA DLA CZYTELNOŚCI NAPISÓW */
+        .text-shadow {
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.9), 0px 0px 20px rgba(0,0,0,1);
+        }
+
+        /* WARSTWY SZKLANE */
+        .glass-layer {
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(15px);
+            border-top: 2px solid var(--khaki);
+            border-bottom: 2px solid var(--khaki);
+        }
+
+        .desc-box {
+            background: rgba(0, 0, 0, 0.8);
+            border: 3px solid var(--khaki);
+            padding: 3.5rem 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: 0 0 50px rgba(0,0,0,1);
+        }
+
+        .img-box {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            border: 2px solid var(--khaki);
+            background: #000;
+        }
+        
+        .img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.8s ease;
+        }
+
+        .img-box:hover img { transform: scale(1.05); }
+
+        .text-khaki { color: var(--khaki); }
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="selection:bg-khaki selection:text-black">
+
+    <div class="fixed-bg"></div>
+
+    <div class="h-screen flex flex-col items-center justify-end pb-20">
+        <div class="animate-bounce flex flex-col items-center">
+            <span class="text-khaki font-black tracking-[0.5em] text-xs uppercase mb-2 text-shadow">Przewiń, by wejść</span>
+            <svg class="w-6 h-6 text-khaki" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+        </div>
+    </div>
+
+    <nav class="sticky top-0 w-full z-50 bg-black/90 backdrop-blur-md border-b border-khaki p-5 flex justify-between items-center px-10">
+        <div class="font-black tracking-tighter text-3xl italic uppercase text-white">
+            Flow<span class="text-khaki">State</span>
+        </div>
+        <div class="flex gap-8 text-[12px] uppercase font-black tracking-[0.2em]">
+            <a href="#glowne" class="text-khaki hover:text-white transition">Portfolio</a>
+            <a href="#kolarz" class="text-khaki hover:text-white transition">Kolarz</a>
+            <a href="#kontakt" class="text-khaki hover:text-white transition border border-khaki px-4 py-1">Kontakt</a>
+        </div>
+    </nav>
+
+    <section class="glass-layer py-32 px-6">
+        <div class="max-w-5xl mx-auto text-center">
+            <h1 class="text-7xl md:text-9xl font-black uppercase tracking-tighter leading-none mb-12 text-shadow">
+                FLOW<span class="text-khaki italic">STATE</span>
+            </h1>
+            
+            <div class="desc-box">
+                <p class="text-khaki tracking-[0.6em] text-sm md:text-base uppercase font-black mb-8 border-b border-khaki/30 pb-4">
+                    Ernest Szymański | Szubin 2026
+                </p>
+                <p class="text-xl md:text-3xl tracking-wide leading-tight uppercase font-black text-white italic text-shadow">
+                    Klimatyczna fotografia portretowa, <br class="hidden md:block"> uliczna oraz reportażowa.
+                </p>
+                <div class="mt-8 py-4 bg-khaki text-black text-2xl md:text-4xl font-black uppercase tracking-tighter italic">
+                    Autentyczność i Kinowy Nastrój
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="glowne" class="py-40 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-center text-khaki uppercase tracking-[0.4em] text-4xl md:text-7xl font-black mb-24 italic text-shadow">
+                KLUCZOWE KADRY
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+                <div class="img-box aspect-[3/4] shadow-[0_0_50px_rgba(0,0,0,0.8)]"><img src="foto1.jpg" alt="1"></div>
+                <div class="img-box aspect-[3/4] shadow-[0_0_50px_rgba(0,0,0,0.8)]"><img src="foto2.jpg" alt="2"></div>
+                <div class="img-box aspect-[3/4] shadow-[0_0_50px_rgba(0,0,0,0.8)]"><img src="foto3.jpg" alt="3"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="kolarz" class="glass-layer py-40 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-center text-khaki uppercase tracking-[0.4em] text-3xl md:text-6xl font-black mb-24 text-shadow">
+                NOWE REALIZACJE
+            </h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="img-box aspect-square"><img src="grid1.jpg" alt="g1"></div>
+                <div class="img-box aspect-square"><img src="grid2.jpg" alt="g2"></div>
+                <div class="img-box aspect-square"><img src="grid3.jpg" alt="g3"></div>
+                <div class="img-box aspect-square"><img src="grid4.jpg" alt="g4"></div>
+                <div class="img-box aspect-square"><img src="grid5.jpg" alt="g5"></div>
+                <div class="img-box aspect-square"><img src="grid6.jpg" alt="g6"></div>
+                <div class="img-box aspect-square"><img src="grid7.jpg" alt="g7"></div>
+                <div class="img-box aspect-square"><img src="grid8.jpg" alt="g8"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="kontakt" class="py-40 text-center px-6">
+        <h2 class="text-khaki uppercase tracking-[0.5em] text-xl font-black mb-12 text-shadow">KONTAKT / WSPÓŁPRACA</h2>
+        <div class="flex flex-col gap-10">
+            <a href="mailto:flowstate@gmail.com" class="text-4xl md:text-8xl font-black text-white hover:text-khaki transition duration-500 tracking-tighter text-shadow">
+                flowstate@gmail.com
+            </a>
+            <div class="flex flex-col items-center">
+                <a href="https://wa.me/48789851481" target="_blank" class="bg-khaki text-black px-10 py-5 text-2xl md:text-4xl font-black tracking-tighter hover:bg-white transition-all">
+                    WA: +48 789 851 481
+                </a>
+            </div>
+        </div>
+        <div class="mt-40 text-khaki font-black text-xs uppercase tracking-[1em] text-shadow">
+            ERNEST SZYMAŃSKI © 2026
+        </div>
+    </footer>
+
+</body>
+</html>
